@@ -2,13 +2,7 @@ import { ReactNode } from "react";
 
 import { siteConfig } from "@/config/site";
 
-import Figma from "../../logos/figma";
-import React from "../../logos/react";
-import ShadcnUi from "../../logos/shadcn-ui";
-import Tailwind from "../../logos/tailwind";
-import TypeScript from "../../logos/typescript";
 import { Badge } from "../../ui/badge";
-import Logo from "../../ui/logo";
 import { Section } from "../../ui/section";
 
 interface LogosProps {
@@ -19,38 +13,34 @@ interface LogosProps {
 }
 
 export default function Logos({
-  title = "Built with industry-standard tools and best practices",
-  badge = (
-    <Badge variant="outline" className="border-brand/30 text-brand">
-      Last updated: {siteConfig.stats.updated}
-    </Badge>
-  ),
-  logos = [
-    <Logo key="figma" image={Figma} name="Figma" />,
-    <Logo key="react" image={React} name="React" version="19.0.0" />,
-    <Logo
-      key="typescript"
-      image={TypeScript}
-      name="TypeScript"
-      version="5.6.3"
-    />,
-    <Logo
-      key="shadcn"
-      image={ShadcnUi}
-      name="Shadcn/ui"
-      version="2.4.0"
-      badge="New"
-    />,
-    <Logo
-      key="tailwind"
-      image={Tailwind}
-      name="Tailwind"
-      version="4.0"
-      badge="New"
-    />,
-  ],
+  title = "Our Work in Action",
+  badge = false,
+  logos = false,
   className,
 }: LogosProps) {
+  const projects = [
+    {
+      title: "Flood Warning & Water Management",
+      image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg",
+      description: "NDWI mapping for early flood detection"
+    },
+    {
+      title: "Illegal Landfill & Methane Detection",
+      image: "https://images.pexels.com/photos/2827392/pexels-photo-2827392.jpeg",
+      description: "Spectral analysis for environmental violations"
+    },
+    {
+      title: "Renewable Energy Site Automation",
+      image: "https://images.pexels.com/photos/433308/pexels-photo-433308.jpeg",
+      description: "Wind and solar site optimization"
+    },
+    {
+      title: "Erosion & Land Damage Assessment",
+      image: "https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg",
+      description: "Comprehensive land change analysis"
+    },
+  ];
+
   return (
     <Section className={className}>
       <div className="max-w-container mx-auto flex flex-col items-center gap-8 text-center">
@@ -58,11 +48,23 @@ export default function Logos({
           {badge !== false && badge}
           <h2 className="text-md font-semibold sm:text-2xl">{title}</h2>
         </div>
-        {logos !== false && logos.length > 0 && (
-          <div className="flex flex-wrap items-center justify-center gap-8">
-            {logos}
-          </div>
-        )}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+          {projects.map((project, index) => (
+            <div key={index} className="flex flex-col gap-4">
+              <div className="aspect-video overflow-hidden rounded-lg">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="text-left">
+                <h3 className="font-semibold text-lg mb-2">{project.title}</h3>
+                <p className="text-muted-foreground text-sm">{project.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </Section>
   );

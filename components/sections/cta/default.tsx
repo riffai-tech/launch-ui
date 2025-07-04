@@ -22,12 +22,17 @@ interface CTAProps {
 }
 
 export default function CTA({
-  title = "Start building",
+  title = "Impact Space and Everyday Life on a Planetary Scale",
   buttons = [
     {
       href: siteConfig.getStartedUrl,
-      text: "Get Started",
+      text: "Explore the Demo",
       variant: "default",
+    },
+    {
+      href: "mailto:contact@riffai.com",
+      text: "Contact Us",
+      variant: "glow",
     },
   ],
   className,

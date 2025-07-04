@@ -4,7 +4,6 @@ import { ReactNode } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import Github from "../../logos/github";
 import { Badge } from "../../ui/badge";
 import { Button, type ButtonProps } from "../../ui/button";
 import Glow from "../../ui/glow";
@@ -30,25 +29,22 @@ interface HeroProps {
 }
 
 export default function Hero({
-  title = "Give your big idea the design it deserves",
-  description = "Professionally designed blocks and templates built with React, Shadcn/ui and Tailwind that will help your product stand out.",
+  title = "BRING SPACE DOWN TO EARTH",
+  description = "AI-powered satellite solutions for monitoring environmental change.",
   mockup = (
-    <Screenshot
-      srcLight="/app-light.png"
-      srcDark="/app-dark.png"
-      alt="Launch UI app screenshot"
-      width={1248}
-      height={765}
-      className="w-full"
+    <img
+      src="https://images.pexels.com/photos/87651/earth-blue-planet-globe-planet-87651.jpeg"
+      alt="Earth from space"
+      className="w-full h-auto rounded-xl"
     />
   ),
   badge = (
     <Badge variant="outline" className="animate-appear">
       <span className="text-muted-foreground">
-        New version of Launch UI is out!
+        97% accuracy satellite monitoring
       </span>
       <a href={siteConfig.getStartedUrl} className="flex items-center gap-1">
-        Get started
+        Explore demo
         <ArrowRightIcon className="size-3" />
       </a>
     </Badge>
@@ -56,14 +52,13 @@ export default function Hero({
   buttons = [
     {
       href: siteConfig.getStartedUrl,
-      text: "Get Started",
+      text: "Explore the Demo",
       variant: "default",
     },
     {
-      href: siteConfig.links.github,
-      text: "Github",
+      href: "mailto:contact@riffai.com",
+      text: "Contact Us",
       variant: "glow",
-      icon: <Github className="mr-2 size-4" />,
     },
   ],
   className,

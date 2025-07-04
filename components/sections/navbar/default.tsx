@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import LaunchUI from "../../logos/launch-ui";
+import RIFFAI from "../../logos/riffai";
 import { Button, type ButtonProps } from "../../ui/button";
 import {
   Navbar as NavbarComponent,
@@ -40,24 +40,24 @@ interface NavbarProps {
 }
 
 export default function Navbar({
-  logo = <LaunchUI />,
-  name = "Launch UI",
+  logo = <RIFFAI />,
+  name = "RIFFAI",
   homeUrl = siteConfig.url,
   mobileLinks = [
-    { text: "Getting Started", href: siteConfig.url },
-    { text: "Components", href: siteConfig.url },
-    { text: "Documentation", href: siteConfig.url },
+    { text: "Technology", href: "#technology" },
+    { text: "Projects", href: "#projects" },
+    { text: "Team", href: "#team" },
   ],
   actions = [
-    { text: "Sign in", href: siteConfig.url, isButton: false },
+    { text: "Contact", href: "mailto:contact@riffai.com", isButton: false },
     {
-      text: "Get Started",
-      href: siteConfig.url,
+      text: "Explore Demo",
+      href: siteConfig.getStartedUrl,
       isButton: true,
       variant: "default",
     },
   ],
-  showNavigation = true,
+  showNavigation = false,
   customNavigation,
   className,
 }: NavbarProps) {

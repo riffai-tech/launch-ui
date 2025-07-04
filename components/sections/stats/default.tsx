@@ -1,5 +1,3 @@
-import { siteConfig } from "@/config/site";
-
 import { Section } from "../../ui/section";
 
 interface StatItemProps {
@@ -17,26 +15,24 @@ interface StatsProps {
 export default function Stats({
   items = [
     {
-      label: "used by",
-      value: Math.round(siteConfig.stats.figma / 100) / 10,
-      suffix: "k",
-      description: "designers on Figma Community",
+      label: "annual losses",
+      value: "$2T",
+      description: "in productivity from climate extremes",
     },
     {
-      label: "over",
-      value: siteConfig.stats.github,
-      description: "clones and forks of the template on Github",
+      label: "increase in",
+      value: "83%",
+      description: "climate-related disaster events",
     },
     {
-      label: "already",
-      value: Math.round(siteConfig.stats.cli / 100) / 10,
-      suffix: "k",
-      description: "installations with shadcn/ui CLI",
+      label: "supply chain losses",
+      value: "$25T",
+      description: "from climate disruptions",
     },
     {
-      label: "includes",
-      value: siteConfig.stats.sections,
-      description: "blocks and sections",
+      label: "accuracy with",
+      value: "97%",
+      description: "satellite AI monitoring",
     },
   ],
   className,
@@ -44,6 +40,11 @@ export default function Stats({
   return (
     <Section className={className}>
       <div className="container mx-auto max-w-[960px]">
+        <div className="flex flex-col items-center gap-8 mb-12">
+          <h2 className="text-center text-3xl font-semibold sm:text-5xl">
+            The Rising Cost of Environmental Uncertainty
+          </h2>
+        </div>
         {items !== false && items.length > 0 && (
           <div className="grid grid-cols-2 gap-12 sm:grid-cols-4">
             {items.map((item, index) => (

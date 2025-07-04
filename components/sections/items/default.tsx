@@ -1,16 +1,16 @@
 import {
-  BlocksIcon,
-  EclipseIcon,
-  FastForwardIcon,
-  LanguagesIcon,
-  MonitorSmartphoneIcon,
-  RocketIcon,
-  ScanFaceIcon,
-  SquarePenIcon,
+  SatelliteIcon,
+  BrainCircuitIcon,
+  EarthIcon,
+  TrendingUpIcon,
+  ShieldCheckIcon,
+  ZapIcon,
+  WavesIcon,
+  TreesIcon,
 } from "lucide-react";
 import { ReactNode } from "react";
 
-import { Item, ItemDescription,ItemIcon, ItemTitle } from "../../ui/item";
+import { Item, ItemDescription, ItemIcon, ItemTitle } from "../../ui/item";
 import { Section } from "../../ui/section";
 
 interface ItemProps {
@@ -26,50 +26,47 @@ interface ItemsProps {
 }
 
 export default function Items({
-  title = "Everything you need. Nothing you don't.",
+  title = "Clarity From Above",
   items = [
     {
-      title: "Accessibility first",
-      description: "Fully WCAG 2.0 compliant, made with best a11y practices",
-      icon: <ScanFaceIcon className="size-5 stroke-1" />,
+      title: "20+ Satellites",
+      description: "Integrated data from multiple satellite constellations",
+      icon: <SatelliteIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Responsive design",
-      description: "Looks and works great on any device and screen size",
-      icon: <MonitorSmartphoneIcon className="size-5 stroke-1" />,
+      title: "800+ Parameters",
+      description: "Comprehensive environmental monitoring variables",
+      icon: <BrainCircuitIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Light and dark mode",
-      description:
-        "Seamless switching between color schemes, 6 themes included",
-      icon: <EclipseIcon className="size-5 stroke-1" />,
+      title: "97% Accuracy",
+      description: "Proprietary AI models for precise analysis",
+      icon: <ShieldCheckIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Easy to customize",
-      description: "Flexible options to match your product or brand",
-      icon: <BlocksIcon className="size-5 stroke-1" />,
+      title: "Real-time Analysis",
+      description: "Instant insights without ground-based stations",
+      icon: <ZapIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Top-level performance",
-      description: "Made for lightning-fast load times and smooth interactions",
-      icon: <FastForwardIcon className="size-5 stroke-1" />,
+      title: "Flood Monitoring",
+      description: "Early warning systems for water management",
+      icon: <WavesIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Production ready",
-      description: "Thoroughly tested and launch-prepared",
-      icon: <RocketIcon className="size-5 stroke-1" />,
+      title: "Land Assessment",
+      description: "Erosion and environmental damage detection",
+      icon: <EarthIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Made for localisation",
-      description:
-        "Easy to implement support for multiple languages and regions",
-      icon: <LanguagesIcon className="size-5 stroke-1" />,
+      title: "Renewable Energy",
+      description: "Site automation and optimization",
+      icon: <TrendingUpIcon className="size-5 stroke-1" />,
     },
     {
-      title: "CMS friendly",
-      description:
-        "Built to work with your any headless content management system",
-      icon: <SquarePenIcon className="size-5 stroke-1" />,
+      title: "Methane Detection",
+      description: "Illegal landfill and emission monitoring",
+      icon: <TreesIcon className="size-5 stroke-1" />,
     },
   ],
   className,
@@ -77,9 +74,14 @@ export default function Items({
   return (
     <Section className={className}>
       <div className="max-w-container mx-auto flex flex-col items-center gap-6 sm:gap-20">
-        <h2 className="max-w-[560px] text-center text-3xl leading-tight font-semibold sm:text-5xl sm:leading-tight">
-          {title}
-        </h2>
+        <div className="flex flex-col items-center gap-6 text-center">
+          <h2 className="max-w-[560px] text-center text-3xl leading-tight font-semibold sm:text-5xl sm:leading-tight">
+            {title}
+          </h2>
+          <p className="text-md text-muted-foreground max-w-[740px] font-medium text-balance sm:text-xl">
+            We deliver insights with 97% accuracy by integrating over 20 satellites and 800+ parameters into our proprietary AI models. Our platform provides analysis without reliance on traditional ground-based stations.
+          </p>
+        </div>
         {items !== false && items.length > 0 && (
           <div className="grid auto-rows-fr grid-cols-2 gap-0 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
             {items.map((item, index) => (

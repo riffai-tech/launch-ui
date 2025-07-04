@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import LaunchUI from "../../logos/launch-ui";
+import RIFFAI from "../../logos/riffai";
 import {
   Footer,
   FooterBottom,
@@ -33,37 +33,36 @@ interface FooterProps {
 }
 
 export default function FooterSection({
-  logo = <LaunchUI />,
-  name = "Launch UI",
+  logo = <RIFFAI />,
+  name = "RIFFAI",
   columns = [
     {
-      title: "Product",
+      title: "Technology",
       links: [
-        { text: "Changelog", href: siteConfig.url },
-        { text: "Documentation", href: siteConfig.url },
+        { text: "Satellite Data", href: "#technology" },
+        { text: "AI Models", href: "#technology" },
       ],
     },
     {
-      title: "Company",
+      title: "Solutions",
       links: [
-        { text: "About", href: siteConfig.url },
-        { text: "Careers", href: siteConfig.url },
-        { text: "Blog", href: siteConfig.url },
+        { text: "Environmental Monitoring", href: "#projects" },
+        { text: "Climate Analysis", href: "#projects" },
+        { text: "Disaster Prevention", href: "#projects" },
       ],
     },
     {
       title: "Contact",
       links: [
-        { text: "Discord", href: siteConfig.url },
-        { text: "Twitter", href: siteConfig.url },
-        { text: "Github", href: siteConfig.links.github },
+        { text: "Email", href: "mailto:contact@riffai.com" },
+        { text: "Demo", href: siteConfig.getStartedUrl },
       ],
     },
   ],
-  copyright = "© 2025 Mikołaj Dobrucki. All rights reserved",
+  copyright = "© 2025 RIFFAI. All rights reserved",
   policies = [
-    { text: "Privacy Policy", href: siteConfig.url },
-    { text: "Terms of Service", href: siteConfig.url },
+    { text: "Privacy Policy", href: "/privacy" },
+    { text: "Terms of Service", href: "/terms" },
   ],
   showModeToggle = true,
   className,
